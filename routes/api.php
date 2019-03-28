@@ -22,3 +22,6 @@ Route::get('getjsondata', function() {
 	echo json_encode($arr);
 });
 
+Route::post('login', 'api\UserController@login');
+
+Route::post('signup', 'api\UserController@signup');

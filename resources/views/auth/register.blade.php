@@ -43,7 +43,7 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="{{ URL::asset('images/icon/logo.png') }}" alt="Register_Logo" title="Registration">
+                                <img src="{{ URL::asset('images/logo.png') }}" alt="Register_Logo" title="Registration">
                             </a>
                         </div>
                         <div class="login-form">

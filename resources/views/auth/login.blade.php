@@ -42,7 +42,7 @@
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
-                            <img src="{{ URL::asset('images/icon/logo.png') }}" alt="Login_Logo" title="Login">
+                            <img src="{{ URL::asset('images/logo.png') }}" alt="Login_Logo" title="Login">
                         </div>
                         <div class="login-form">
                             <form action="{{ route('login') }}" method="POST">

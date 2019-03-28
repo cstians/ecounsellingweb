@@ -26,8 +26,8 @@
                                                     <i class="zmdi zmdi-email-open"></i>
                                                 </div>
                                                 <div class="content">
-                                                    <p>You got a email notification</p>
-                                                    <span class="date">April 12, 2018 06:50</span>
+                                                    <p>You got a 6 questions to answer</p>
+                                                    <span class="date">March 21, 2019 06:50</span>
                                                 </div>
                                             </div>
                                             <div class="notifi__item">
@@ -35,8 +35,8 @@
                                                     <i class="zmdi zmdi-account-box"></i>
                                                 </div>
                                                 <div class="content">
-                                                    <p>Your account has been blocked</p>
-                                                    <span class="date">April 12, 2018 06:50</span>
+                                                    <p>You have 5 feedbacks to open</p>
+                                                    <span class="date">March 12, 2019 09:40</span>
                                                 </div>
                                             </div>
                                             <div class="notifi__item">
@@ -44,8 +44,8 @@
                                                     <i class="zmdi zmdi-file-text"></i>
                                                 </div>
                                                 <div class="content">
-                                                    <p>You got a new file</p>
-                                                    <span class="date">April 12, 2018 06:50</span>
+                                                    <p>You got 1 Success Story to review</p>
+                                                    <span class="date">March 16, 2019 21:14</span>
                                                 </div>
                                             </div>
                                             <div class="notifi__footer">
@@ -64,7 +64,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="images/icon/cool_admin.jpg" alt="John Doe" />
+                                            <img src="images/avatar.png" alt="Admin Profile" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
@@ -73,7 +73,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="images/icon/cool_admin.jpg" alt="John Doe" />
+                                                        <img src="images/avatar.png" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">

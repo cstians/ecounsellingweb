@@ -1,7 +1,7 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
                 <div class="logo">
-                        <img src="{{ URL::asset('images/icon/logo.png') }}" alt="Logo" title="Logo"/>
+                        <img src="{{ URL::asset('images/logo.png') }}" alt="Logo" title="Logo" style="height: 80px; width: 80px"/> <span>eCounselling</span>
                 </div>
                 <div class="menu-sidebar__content js-scrollbar1">
                     <nav class="navbar-sidebar">

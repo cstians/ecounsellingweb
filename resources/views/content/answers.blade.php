@@ -20,10 +20,9 @@
                                     <div class="card bg-primary">
                                         <div class="card-body">
                                             <blockquote class="blockquote mb-0 text-light">
-                                                <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                        a ante.</p>
-                                                <footer class="blockquote-footer text-light">Someone famous in
-                                                    <cite title="Source Title">Source Title</cite>
+                                                <p class="text-light">Question?</p>
+                                                <footer class="blockquote-footer text-light">Question Description
+                                                    <cite title="Source Title"></cite>
                                                 </footer>
                                             </blockquote>
                                         </div>
@@ -37,10 +36,9 @@
                                         <div class="card bg-primary">
                                             <div class="card-body">
                                                 <blockquote class="blockquote mb-0 text-light">
-                                                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                            a ante.</p>
-                                                    <footer class="blockquote-footer text-light">Someone famous in
-                                                        <cite title="Source Title">Source Title</cite>
+                                                    <p class="text-light">Question?</p>
+                                                    <footer class="blockquote-footer text-light">Question Description
+                                                        <cite title="Source Title"></cite>
                                                     </footer>
                                                 </blockquote>
                                             </div>
@@ -54,10 +52,9 @@
                                             <div class="card bg-primary">
                                                 <div class="card-body">
                                                     <blockquote class="blockquote mb-0 text-light">
-                                                        <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                                a ante.</p>
-                                                        <footer class="blockquote-footer text-light">Someone famous in
-                                                            <cite title="Source Title">Source Title</cite>
+                                                        <p class="text-light">Question?</p>
+                                                        <footer class="blockquote-footer text-light">Question Description
+                                                            <cite title="Source Title"></cite>
                                                         </footer>
                                                     </blockquote>
                                                 </div>
@@ -71,10 +68,9 @@
                                                 <div class="card bg-primary">
                                                     <div class="card-body">
                                                         <blockquote class="blockquote mb-0 text-light">
-                                                            <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                                    a ante.</p>
-                                                            <footer class="blockquote-footer text-light">Someone famous in
-                                                                <cite title="Source Title">Source Title</cite>
+                                                            <p class="text-light">Question?</p>
+                                                            <footer class="blockquote-footer text-light">Question Description
+                                                                <cite title="Source Title"></cite>
                                                             </footer>
                                                         </blockquote>
                                                     </div>
@@ -88,10 +84,9 @@
                                                     <div class="card bg-primary">
                                                         <div class="card-body">
                                                             <blockquote class="blockquote mb-0 text-light">
-                                                                <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                                        a ante.</p>
-                                                                <footer class="blockquote-footer text-light">Someone famous in
-                                                                    <cite title="Source Title">Source Title</cite>
+                                                                <p class="text-light">Question?</p>
+                                                                <footer class="blockquote-footer text-light">Question Description
+                                                                    <cite title="Source Title"></cite>
                                                                 </footer>
                                                             </blockquote>
                                                         </div>
@@ -101,22 +96,7 @@
                                                     </div>
                                                 </div>
     
-                                                <div class="col-md-4">
-                                                        <div class="card bg-primary">
-                                                            <div class="card-body">
-                                                                <blockquote class="blockquote mb-0 text-light">
-                                                                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                                            a ante.</p>
-                                                                    <footer class="blockquote-footer text-light">Someone famous in
-                                                                        <cite title="Source Title">Source Title</cite>
-                                                                    </footer>
-                                                                </blockquote>
-                                                            </div>
-                                                            <div class="card-footer">
-                                                                <button class="au-btn au-btn--green">Answer</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                
     
         
                         <!-- </div> -->

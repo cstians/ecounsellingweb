@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="overview-wrap">
-                            <h2 class="title-1">View Feedbacks</h2>
+                            <h2 class="title-1">Feedbacks</h2>
                         </div>
                     </div>
                 </div>
@@ -20,10 +20,9 @@
                                     <div class="card bg-primary">
                                         <div class="card-body">
                                             <blockquote class="blockquote mb-0 text-light">
-                                                <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                        a ante.</p>
-                                                <footer class="blockquote-footer text-light">Someone famous in
-                                                    <cite title="Source Title">Source Title</cite>
+                                                <p class="text-light">Good App. It was really useful.</p>
+                                                <footer class="blockquote-footer text-light">
+                                                    <cite title="Source Title"></cite>
                                                 </footer>
                                             </blockquote>
                                         </div>
@@ -37,10 +36,9 @@
                                         <div class="card bg-primary">
                                             <div class="card-body">
                                                 <blockquote class="blockquote mb-0 text-light">
-                                                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                            a ante.</p>
-                                                    <footer class="blockquote-footer text-light">Someone famous in
-                                                        <cite title="Source Title">Source Title</cite>
+                                                    <p class="text-light">Thank You. The app made me feel better.</p>
+                                                    <footer class="blockquote-footer text-light">
+                                                        <cite title="Source Title"></cite>
                                                     </footer>
                                                 </blockquote>
                                             </div>
@@ -54,10 +52,9 @@
                                             <div class="card bg-primary">
                                                 <div class="card-body">
                                                     <blockquote class="blockquote mb-0 text-light">
-                                                        <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                                a ante.</p>
-                                                        <footer class="blockquote-footer text-light">Someone famous in
-                                                            <cite title="Source Title">Source Title</cite>
+                                                        <p class="text-light">The app feels slower. Please fix it.</p>
+                                                        <footer class="blockquote-footer text-light">
+                                                            <cite title="Source Title"></cite>
                                                         </footer>
                                                     </blockquote>
                                                 </div>
@@ -71,10 +68,9 @@
                                                 <div class="card bg-primary">
                                                     <div class="card-body">
                                                         <blockquote class="blockquote mb-0 text-light">
-                                                            <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                                    a ante.</p>
-                                                            <footer class="blockquote-footer text-light">Someone famous in
-                                                                <cite title="Source Title">Source Title</cite>
+                                                            <p class="text-light">It was a nice app. </p>
+                                                            <footer class="blockquote-footer text-light">
+                                                                <cite title="Source Title"></cite>
                                                             </footer>
                                                         </blockquote>
                                                     </div>
@@ -84,40 +80,7 @@
                                                 </div>
                                             </div>
     
-                                            <div class="col-md-4">
-                                                    <div class="card bg-primary">
-                                                        <div class="card-body">
-                                                            <blockquote class="blockquote mb-0 text-light">
-                                                                <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                                        a ante.</p>
-                                                                <footer class="blockquote-footer text-light">Someone famous in
-                                                                    <cite title="Source Title">Source Title</cite>
-                                                                </footer>
-                                                            </blockquote>
-                                                        </div>
-                                                        <div class="card-footer">
-                                                            <button class="au-btn au-btn--green">Mark As Read</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                                <div class="col-md-4">
-                                                        <div class="card bg-primary">
-                                                            <div class="card-body">
-                                                                <blockquote class="blockquote mb-0 text-light">
-                                                                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                                            a ante.</p>
-                                                                    <footer class="blockquote-footer text-light">Someone famous in
-                                                                        <cite title="Source Title">Source Title</cite>
-                                                                    </footer>
-                                                                </blockquote>
-                                                            </div>
-                                                            <div class="card-footer">
-                                                                <button class="au-btn au-btn--green">Mark As Read</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-    
+                                        
         
                         <!-- </div> -->
                     </div>
