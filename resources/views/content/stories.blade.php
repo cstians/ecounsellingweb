@@ -28,7 +28,8 @@
                                         </blockquote>
                                     </div>
                                     <div class="card-footer">
-                                        <button class="au-btn au-btn--green">Post</button>
+                                        <button class="au-btn au-btn--green">Post</button>&nbsp&nbsp&nbsp&nbsp&nbsp
+                                        <button class="au-btn au-btn--green">Delete</button>
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +46,8 @@
                                             </blockquote>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="au-btn au-btn--green">Post</button>
+                                            <button class="au-btn au-btn--green">Post</button>&nbsp&nbsp&nbsp&nbsp&nbsp
+                                            <button class="au-btn au-btn--green">Delete</button>
                                         </div>
                                     </div>
                                 </div>
@@ -62,7 +64,8 @@
                                                 </blockquote>
                                             </div>
                                             <div class="card-footer">
-                                                <button class="au-btn au-btn--green">Post</button>
+                                                <button class="au-btn au-btn--green">Post</button>&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                <button class="au-btn au-btn--green">Delete</button>
                                             </div>
                                         </div>
                                     </div>
@@ -79,7 +82,8 @@
                                                     </blockquote>
                                                 </div>
                                                 <div class="card-footer">
-                                                    <button class="au-btn au-btn--green">Post</button>
+                                                    <button class="au-btn au-btn--green">Post</button>&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                    <button class="au-btn au-btn--green">Delete</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -96,7 +100,8 @@
                                                         </blockquote>
                                                     </div>
                                                     <div class="card-footer">
-                                                        <button class="au-btn au-btn--green">Post</button>
+                                                        <button class="au-btn au-btn--green">Post</button>&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                        <button class="au-btn au-btn--green">Delete</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -113,7 +118,8 @@
                                                             </blockquote>
                                                         </div>
                                                         <div class="card-footer">
-                                                            <button class="au-btn au-btn--green">Post</button>
+                                                            <button class="au-btn au-btn--green">Post</button>&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                            <button class="au-btn au-btn--green">Delete</button>
                                                         </div>
                                                     </div>
                                                 </div>

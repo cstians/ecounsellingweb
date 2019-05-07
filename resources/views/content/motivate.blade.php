@@ -22,19 +22,30 @@
                 </div><br/>
                 <!-- /.box-header -->
                 <div class="box-body">
-                  <form role="form">
+                  <form action="{{ route('motivation') }}" method="post">
+                  @csrf
                     <!-- text input -->
                     <div class="form-group">
                       <label>URL</label>
-                      <input type="text" class="form-control" placeholder="Enter video Link">
+                      <input type="text" class="form-control" name="motiURL" placeholder="Enter video Link">
                     </div>
     
                     <!-- textarea -->
                     <div class="form-group">
                       <label>Description</label>
-                      <textarea class="form-control" rows="3" placeholder="Enter Description"></textarea>
+                      <textarea class="form-control" rows="3" name="description" placeholder="Enter Description"></textarea>
                       <br/>
+                      @if(Session::has('message'))
+                        <div class="sufee-alert alert with-close alert-success alert-dismissable fade show">
+                        <span class="badge badge-pill badge-success">Success</span>
+                          {{ Session::get('message') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                      @endif
                       <button type="submit" class="btn btn-info">Send</button>
-                    </div>
+                      
+    
     
 @endsection

@@ -45,7 +45,13 @@ class MotivationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $motivation = new Motivation([
+            'URL' => $request->motiURL,
+            'Description' => $request->description,
+        ]);
+
+        $motivation->save();
+	    return back()->with('message', 'The link has been successfully posted');
     }
 
     /**

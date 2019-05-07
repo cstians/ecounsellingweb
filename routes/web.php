@@ -22,14 +22,22 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home')->middleware('revalidate');
 
 Route::get('answer', 'AnswerController@index')->name('answer')->middleware('revalidate');
+Route::post('submitanswer/{qid}', 'AnswerController@updateAnswer');
 
 Route::get('feedbacks', 'FeedbackController@index')->name('feedbacks');
+
+Route::post('feedbacks', 'FeedbackController@store')->name('feedback');
+Route::delete('deletefeedback', 'FeedbackController@destroy')->name('deletefeedback');
 
 Route::get('stories', 'StoryController@index')->name('stories');
 
 Route::get('notifications', 'NotificationController@index')->name('notifications');
 
+Route::post('notification', 'NotificationController@store')->name('notification');
+
 Route::get('motivation', 'MotivationController@index')->name('motivation');
+
+Route::post('motivation', 'MotivationController@store')->name('motivation');
 
 Route::get('addadmin', function() {
     return view('content.addadmin');
@@ -50,3 +58,5 @@ Route::get('search', function() {
 Route::get('settings', function() {
     echo 'Settings hit';
 })->name('settings');
+
+Route::post('addanswer', 'QuestionController@update');

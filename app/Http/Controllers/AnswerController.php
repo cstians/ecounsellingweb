@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Answer;
 use Illuminate\Http\Request;
+use App\Question as question;
+use Illuminate\Support\Facades\DB;
 
 class AnswerController extends Controller
 {
@@ -25,7 +27,9 @@ class AnswerController extends Controller
      */
     public function index()
     {
-        return view('content.answers');
+        //Shows all the unanswered questions to the admin
+        $questions=question::all();
+        return view('content.answers', compact('questions'));
     }
 
     /**
@@ -46,7 +50,7 @@ class AnswerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -68,7 +72,7 @@ class AnswerController extends Controller
      */
     public function edit(Answer $answer)
     {
-        //
+       
     }
 
     /**
@@ -78,9 +82,9 @@ class AnswerController extends Controller
      * @param  \App\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Answer $answer)
+    public function update(Request $request, $qid)
     {
-        //
+        
     }
 
     /**
@@ -92,5 +96,11 @@ class AnswerController extends Controller
     public function destroy(Answer $answer)
     {
         //
+    }
+
+    public function updateAnswer($id, Request $request) {
+        DB::table('questions')->where('id', $id)->update(['answer' => $request->answer]);
+        $questions=question::all();
+        return view('content.answers', compact('questions'));
     }
 }

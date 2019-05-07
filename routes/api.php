@@ -17,11 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('getjsondata', function() {
-	$arr = array("one" => "Doten", "two" => "Galley", "three" => "Khusant", "four" => "Sonam");
-	echo json_encode($arr);
-});
-
 Route::post('login', 'api\UserController@login');
 
 Route::post('signup', 'api\UserController@signup');
+
+Route::post('addquestion', 'api\QuestionController@store');
+
+Route::get('getquestion', 'api\QuestionController@show');

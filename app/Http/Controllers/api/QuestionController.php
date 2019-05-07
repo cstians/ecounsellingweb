@@ -1,22 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api;
 
-use App\Notification;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Session; 
 
-class NotificationController extends Controller
+use App\Question as question;
+
+class QuestionController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +17,7 @@ class NotificationController extends Controller
      */
     public function index()
     {
-        return view('content.announcements');
+        //
     }
 
     /**
@@ -45,33 +38,38 @@ class NotificationController extends Controller
      */
     public function store(Request $request)
     {
-        $notification = new Notification([
-            'title' => $request->notititle,
-            'message' => $request->message,
+        //To store the user question
+
+        $question = new Question([
+            'question' => $request->question,
+            'description' => $request->description,
+            'askedby' => $request->username,
         ]);
 
-        $notification->save();
-	    return back()->with('message', 'The notification has been successfully send');
+        $question->save();
+	    return response()->json([
+			'message' => 'Question Submitted Successfully'
+	  	], 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Notification  $notification
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Notification $notification)
+    public function show($id)
     {
-        //
+        
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Notification  $notification
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Notification $notification)
+    public function edit($id)
     {
         //
     }
@@ -80,21 +78,24 @@ class NotificationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Notification  $notification
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Notification $notification)
+    public function update(Request $request, $id)
     {
-        //
+        //Admin answer response, limited to one answer only
+        //Needs database normalization of more than one answer can be added
+
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Notification  $notification
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Notification $notification)
+    public function destroy($id)
     {
         //
     }

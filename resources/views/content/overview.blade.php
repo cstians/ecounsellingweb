@@ -23,7 +23,7 @@
                                             <i class="zmdi zmdi-account-o"></i>
                                         </div>
                                         <div class="text">
-                                            <h2>3562</h2>
+                                            <h2>{{ $total['membersOnline'] }}</h2>
                                             <span>Members Online</span><br/>
                                         </div>
                                     </div>
@@ -39,7 +39,7 @@
                                             <i class="zmdi zmdi-account-o"></i>
                                         </div>
                                         <div class="text">
-                                            <h2>358</h2>
+                                            <h2>{{ $total['peer'] }}</h2>
                                             <span>Peer Counsellors</span><br/>
                                         </div>
                                     </div>
@@ -55,7 +55,7 @@
                                             <i class="zmdi zmdi-account-o"></i>
                                         </div><br/>
                                         <div class="text">
-                                            <h2>13</h2>
+                                            <h2>{{ $total['professional'] }}</h2>
                                             <span>Prof. Counsellors</span><br/>
                                         </div>
                                     </div>
@@ -70,7 +70,7 @@
                                             <i class="zmdi zmdi-calendar-note"></i>
                                         </div>
                                         <div class="text">
-                                            <h2>531</h2>
+                                            <h2>{{ $total['queries_answer'] }}</h2>
                                             <span>Queries Answered</span><br/>
                                         </div>
                                     </div>
@@ -78,4 +78,5 @@
                             </div>
                         </div>
                     </div>
+                    
 @endsection

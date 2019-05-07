@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Feedback;
+use App\Feedback  as feedback;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
@@ -24,8 +24,10 @@ class FeedbackController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+
     {
-        return view('content.feedbacks');
+        $feedback=feedback::all();
+        return view('content.feedbacks',compact('feedback'));
     }
 
     /**
@@ -89,8 +91,10 @@ class FeedbackController extends Controller
      * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Feedback $feedback)
+    public function destroy(Request $feedback)
     {
-        //
+        $deleteFeedback = Feedback::find($feedback->feedback_id);
+        $deleteFeedback->delete();
+        return back()->with('message', 'Feedback is removed as Read');
     }
 }
