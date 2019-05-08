@@ -45,7 +45,13 @@ class NotificationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $notification = new Notification([
+            'title' => $request->notititle,
+            'message' => $request->message,
+        ]);
+
+        $notification->save();
+	    return back()->with('message', 'The notification has been successfully send');
     }
 
     /**

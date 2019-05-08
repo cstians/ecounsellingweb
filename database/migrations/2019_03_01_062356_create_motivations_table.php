@@ -15,6 +15,8 @@ class CreateMotivationsTable extends Migration
     {
         Schema::create('motivations', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('URL');
+            $table->string('Description');
             $table->timestamps();
         });
     }

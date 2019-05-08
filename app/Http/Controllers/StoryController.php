@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Story;
+use App\Story as story;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class StoryController extends Controller
 {
@@ -24,7 +25,8 @@ class StoryController extends Controller
      */
     public function index()
     {
-        return view('content.stories');
+        $stories=story::all();
+        return view('content.stories', compact('stories'));
     }
 
     /**
@@ -88,8 +90,10 @@ class StoryController extends Controller
      * @param  \App\Story  $story
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Story $story)
+    public function destroy(Request $story)
     {
-        //
+        $deleteStory = story::find($story->story_id);
+        $deleteStory->delete();
+        return back()->with('message', 'The story is removed for all users');
     }
 }

@@ -14,111 +14,42 @@
                         </div>
                     </div>
                 </div>
+
+                @if(Session::has('message'))
+                    <div class="sufee-alert alert with-close alert-success alert-dismissable fade show">
+                    <span class="badge badge-pill badge-success">Success</span>
+                    {{ Session::get('message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                @endif
+
+
+                @foreach($stories as $story)
                 <div class="row m-t-25">
                     <!-- <div class="col-sm-6 col-lg-3"> -->
                             <div class="col-md-4">
                                 <div class="card bg-primary">
                                     <div class="card-body">
                                         <blockquote class="blockquote mb-0 text-light">
-                                            <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                    a ante.</p>
-                                            <footer class="blockquote-footer text-light">Someone famous in
-                                                <cite title="Source Title">Source Title</cite>
-                                            </footer>
+                                            <p class="text-light">{{ $story['story'] }}</p>
                                         </blockquote>
                                     </div>
                                     <div class="card-footer">
-                                        <button class="au-btn au-btn--green">Post</button>
+                                    
+                                        <button class="au-btn au-btn--green">Post</button>&nbsp&nbsp&nbsp&nbsp&nbsp
+                                        <form action="{{ route('deletestory') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="_method" value="DELETE"/>
+                                        <input type="hidden" name="story_id" value="{{ $story['id'] }}"/>
+                                        <button class="au-btn au-btn--blue" type="submit">Remove</button>
+                                        
+                                    </form>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                    <div class="card bg-primary">
-                                        <div class="card-body">
-                                            <blockquote class="blockquote mb-0 text-light">
-                                                <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                        a ante.</p>
-                                                <footer class="blockquote-footer text-light">Someone famous in
-                                                    <cite title="Source Title">Source Title</cite>
-                                                </footer>
-                                            </blockquote>
-                                        </div>
-                                        <div class="card-footer">
-                                            <button class="au-btn au-btn--green">Post</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                        <div class="card bg-primary">
-                                            <div class="card-body">
-                                                <blockquote class="blockquote mb-0 text-light">
-                                                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                            a ante.</p>
-                                                    <footer class="blockquote-footer text-light">Someone famous in
-                                                        <cite title="Source Title">Source Title</cite>
-                                                    </footer>
-                                                </blockquote>
-                                            </div>
-                                            <div class="card-footer">
-                                                <button class="au-btn au-btn--green">Post</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                            <div class="card bg-primary">
-                                                <div class="card-body">
-                                                    <blockquote class="blockquote mb-0 text-light">
-                                                        <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                                a ante.</p>
-                                                        <footer class="blockquote-footer text-light">Someone famous in
-                                                            <cite title="Source Title">Source Title</cite>
-                                                        </footer>
-                                                    </blockquote>
-                                                </div>
-                                                <div class="card-footer">
-                                                    <button class="au-btn au-btn--green">Post</button>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                                <div class="card bg-primary">
-                                                    <div class="card-body">
-                                                        <blockquote class="blockquote mb-0 text-light">
-                                                            <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                                    a ante.</p>
-                                                            <footer class="blockquote-footer text-light">Someone famous in
-                                                                <cite title="Source Title">Source Title</cite>
-                                                            </footer>
-                                                        </blockquote>
-                                                    </div>
-                                                    <div class="card-footer">
-                                                        <button class="au-btn au-btn--green">Post</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                    <div class="card bg-primary">
-                                                        <div class="card-body">
-                                                            <blockquote class="blockquote mb-0 text-light">
-                                                                <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                                        a ante.</p>
-                                                                <footer class="blockquote-footer text-light">Someone famous in
-                                                                    <cite title="Source Title">Source Title</cite>
-                                                                </footer>
-                                                            </blockquote>
-                                                        </div>
-                                                        <div class="card-footer">
-                                                            <button class="au-btn au-btn--green">Post</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-    
+                </div>
+                @endforeach
                     <!-- </div> -->
                 </div>
 @endsection

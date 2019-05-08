@@ -22,21 +22,37 @@
                 </div><br/>
                 <!-- /.box-header -->
                 <div class="box-body">
-                <form role="form">
+                <form action="{{ route('notification') }}" method="post">
+                  @csrf
                     <!-- text input -->
                     <div class="form-group">
                       <label>Title</label>
-                      <input type="text" class="form-control" placeholder="Enter Notification Title">
+                      <input type="text" class="form-control" name="notititle" placeholder="Enter Notification Title">
                     </div>
     
                     <!-- textarea -->
                     <div class="form-group">
                       <label>Message</label>
-                      <textarea class="form-control" rows="3" placeholder="Enter Message"></textarea>
+                      <textarea class="form-control" rows="3" name="message" placeholder="Enter Message"></textarea>
                       <br/>
+                      @if(Session::has('message'))
+                        <div class="sufee-alert alert with-close alert-success alert-dismissable fade show">
+                        <span class="badge badge-pill badge-success">Success</span>
+                          {{ Session::get('message') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                      @endif
                       <button type="submit" class="btn btn-info">Push Notification</button>
                     </div>
 
                     
     
-@endsection
+@endsection$notification = new Notification([
+            'title' => $request->notititle,
+            'message' => $request->message,
+        ]);
+
+        $notification->save();
+	    return redirect('home');

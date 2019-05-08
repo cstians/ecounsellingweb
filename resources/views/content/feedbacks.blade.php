@@ -14,74 +14,39 @@
                         </div>
                     </div>
                 </div>
+                @if(Session::has('message'))
+                    <div class="sufee-alert alert with-close alert-success alert-dismissable fade show">
+                    <span class="badge badge-pill badge-success">Success</span>
+                    {{ Session::get('message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    @endif
                 <div class="row m-t-25">
                         <!-- <div class="col-sm-6 col-lg-3"> -->
+                        @foreach($feedback as $feedback)
                                 <div class="col-md-4">
                                     <div class="card bg-primary">
                                         <div class="card-body">
                                             <blockquote class="blockquote mb-0 text-light">
-                                                <p class="text-light">Good App. It was really useful.</p>
+                                                <p class="text-light">{{$feedback['Message']}}</p>
                                                 <footer class="blockquote-footer text-light">
                                                     <cite title="Source Title"></cite>
                                                 </footer>
                                             </blockquote>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="au-btn au-btn--green">Mark As Read</button>
+                                          <form action="{{ route('deletefeedback') }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="_method" value="DELETE"/>
+                                            <input type="hidden" name="feedback_id" value="{{ $feedback['id'] }}"/>
+                                            <button type="submit" class="au-btn au-btn--green">Mark As Read</button>
+                                          </form>
                                         </div>
                                     </div>
                                 </div>
+                                @endforeach
     
-                                <div class="col-md-4">
-                                        <div class="card bg-primary">
-                                            <div class="card-body">
-                                                <blockquote class="blockquote mb-0 text-light">
-                                                    <p class="text-light">Thank You. The app made me feel better.</p>
-                                                    <footer class="blockquote-footer text-light">
-                                                        <cite title="Source Title"></cite>
-                                                    </footer>
-                                                </blockquote>
-                                            </div>
-                                            <div class="card-footer">
-                                                <button class="au-btn au-btn--green">Mark As Read</button>
-                                            </div>
-                                        </div>
-                                    </div>
-    
-                                    <div class="col-md-4">
-                                            <div class="card bg-primary">
-                                                <div class="card-body">
-                                                    <blockquote class="blockquote mb-0 text-light">
-                                                        <p class="text-light">The app feels slower. Please fix it.</p>
-                                                        <footer class="blockquote-footer text-light">
-                                                            <cite title="Source Title"></cite>
-                                                        </footer>
-                                                    </blockquote>
-                                                </div>
-                                                <div class="card-footer">
-                                                    <button class="au-btn au-btn--green">Mark As Read</button>
-                                                </div>
-                                            </div>
-                                        </div>
-    
-                                        <div class="col-md-4">
-                                                <div class="card bg-primary">
-                                                    <div class="card-body">
-                                                        <blockquote class="blockquote mb-0 text-light">
-                                                            <p class="text-light">It was a nice app. </p>
-                                                            <footer class="blockquote-footer text-light">
-                                                                <cite title="Source Title"></cite>
-                                                            </footer>
-                                                        </blockquote>
-                                                    </div>
-                                                    <div class="card-footer">
-                                                        <button class="au-btn au-btn--green">Mark As Read</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-    
-                                        
-        
-                        <!-- </div> -->
-                    </div>
+                               
 @endsection
