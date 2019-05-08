@@ -10,10 +10,29 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="overview-wrap">
-                            <h2 class="title-1">Answer Queries</h2>
+                            
+                            @if($type['type'] == 'answered')
+                                <h2 class="title-1">Answered Queries</h2>
+                                <a href="{{ url('answer') }}">View Unanswered Queries
+                                </a>
+                            @endif
+                            @if($type['type'] == 'unanswered')
+                                <h2 class="title-1">Answer Queries</h2>
+                                <a href="{{ url('displayanswered') }}">View Answered Queries
+                                </a>
+                            @endif
                         </div>
                     </div>
                 </div>
+                @if(Session::has('message'))
+                    <div class="sufee-alert alert with-close alert-success alert-dismissable fade show">
+                    <span class="badge badge-pill badge-success">Success</span>
+                    {{ Session::get('message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    @endif
                 <div class="row m-t-25">
                         <!-- <div class="col-sm-6 col-lg-3"> -->
                             @foreach($questions as $question)
@@ -31,15 +50,22 @@
                                         <div class="card-footer">
                                         @if($question['answer'])
                                             {{ $question['answer'] }}
+                                            <form action="{{ route('deletequery') }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="_method" value="DELETE"/>
+                                            <input type="hidden" name="question_id" value="{{ $question['id'] }}"/>
+                                                <button class="au-btn au-btn--blue" data-toggle="modal" type="submit">Delete this Query</button>
+                                            </form>
                                         @else
                                         
                                             <form action="submitanswer/{{ $question['id'] }}" method="POST">
                                             @csrf 
-                                                <textarea placeholder="Please type your answer here..." name="answer"></textarea><br/>
-                                                
-                                        @endif    
-                                        <button class="au-btn au-btn--green" data-toggle="modal" type="submit">Submit</button>
+                                                <textarea cols=115 placeholder="Please type your answer here..." name="answer"></textarea><br/>
+                                                <button class="au-btn au-btn--green" data-toggle="modal" type="submit">Submit</button>
                                             </form>
+                                        @endif    
+                                        
+                                        
                                         </div>
                                     </div>
                                 </div>

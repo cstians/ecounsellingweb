@@ -23,6 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('revalidat
 
 Route::get('answer', 'AnswerController@index')->name('answer')->middleware('revalidate');
 Route::post('submitanswer/{qid}', 'AnswerController@updateAnswer');
+Route::get('displayanswered', 'AnswerController@displayAnswered')->name('displayanswered');
+Route::delete('deletequery', 'AnswerController@destroy')->name('deletequery');
 
 Route::get('feedbacks', 'FeedbackController@index')->name('feedbacks');
 
@@ -30,6 +32,8 @@ Route::post('feedbacks', 'FeedbackController@store')->name('feedback');
 Route::delete('deletefeedback', 'FeedbackController@destroy')->name('deletefeedback');
 
 Route::get('stories', 'StoryController@index')->name('stories');
+Route::delete('deletestory', 'StoryController@destroy')->name('deletestory');
+
 
 Route::get('notifications', 'NotificationController@index')->name('notifications');
 

@@ -27,9 +27,11 @@ class AnswerController extends Controller
      */
     public function index()
     {
+    
         //Shows all the unanswered questions to the admin
-        $questions=question::all();
-        return view('content.answers', compact('questions'));
+        $questions=question::all()->where('answer', null);
+        $type=['type'=>'unanswered'];
+        return view('content.answers', compact('questions', 'type'));
     }
 
     /**
@@ -93,14 +95,23 @@ class AnswerController extends Controller
      * @param  \App\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Answer $answer)
+    public function destroy(Request $answer)
     {
-        //
+        $deleteQuery = question::find($answer->question_id);
+        $deleteQuery->delete();
+        return back()->with('message', 'The Query is removed as for all users');
     }
 
     public function updateAnswer($id, Request $request) {
         DB::table('questions')->where('id', $id)->update(['answer' => $request->answer]);
-        $questions=question::all();
-        return view('content.answers', compact('questions'));
+        $questions=question::all()->where('answer', null);
+        $type=['type'=>'unanswered'];
+        return view('content.answers', compact('questions', 'type'));
+    }
+
+    public function displayAnswered() {
+        $questions=\App\Question::all()->where('answer');
+        $type=['type'=>'answered'];
+        return view('content.answers', compact('questions', 'type'));
     }
 }
