@@ -16,89 +16,53 @@
                 </div>
                 <div class="row m-t-25">
                         <!-- <div class="col-sm-6 col-lg-3"> -->
-                                <div class="col-md-4">
-                                    <div class="card bg-primary">
+                            @foreach($questions as $question)
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <h4 class="card-header">{{ $question['question'] }}</h4>
                                         <div class="card-body">
-                                            <blockquote class="blockquote mb-0 text-light">
-                                                <p class="text-light">Question?</p>
-                                                <footer class="blockquote-footer text-light">Question Description
-                                                    <cite title="Source Title"></cite>
+                                            <blockquote class="blockquote mb-0">
+                                                <p>{{ $question['description'] }}</p>
+                                                <footer class="blockquote-footer">
+                                                    <cite title="Source Title">{{ $question['askedby'] }}</cite>
                                                 </footer>
                                             </blockquote>
+                                           
                                         </div>
                                         <div class="card-footer">
-                                            <button class="au-btn au-btn--green">Answer</button>
+                                            <button class="au-btn au-btn--green" data-toggle="modal" data-target="#answerBox">Answer</button>
                                         </div>
+                                    </form>
                                     </div>
                                 </div>
-    
-                                <div class="col-md-4">
-                                        <div class="card bg-primary">
-                                            <div class="card-body">
-                                                <blockquote class="blockquote mb-0 text-light">
-                                                    <p class="text-light">Question?</p>
-                                                    <footer class="blockquote-footer text-light">Question Description
-                                                        <cite title="Source Title"></cite>
-                                                    </footer>
-                                                </blockquote>
-                                            </div>
-                                            <div class="card-footer">
-                                                <button class="au-btn au-btn--green">Answer</button>
-                                            </div>
-                                        </div>
-                                    </div>
-    
-                                    <div class="col-md-4">
-                                            <div class="card bg-primary">
-                                                <div class="card-body">
-                                                    <blockquote class="blockquote mb-0 text-light">
-                                                        <p class="text-light">Question?</p>
-                                                        <footer class="blockquote-footer text-light">Question Description
-                                                            <cite title="Source Title"></cite>
-                                                        </footer>
-                                                    </blockquote>
-                                                </div>
-                                                <div class="card-footer">
-                                                    <button class="au-btn au-btn--green">Answer</button>
-                                                </div>
-                                            </div>
-                                        </div>
-    
-                                        <div class="col-md-4">
-                                                <div class="card bg-primary">
-                                                    <div class="card-body">
-                                                        <blockquote class="blockquote mb-0 text-light">
-                                                            <p class="text-light">Question?</p>
-                                                            <footer class="blockquote-footer text-light">Question Description
-                                                                <cite title="Source Title"></cite>
-                                                            </footer>
-                                                        </blockquote>
-                                                    </div>
-                                                    <div class="card-footer">
-                                                        <button class="au-btn au-btn--green">Answer</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-    
-                                            <div class="col-md-4">
-                                                    <div class="card bg-primary">
-                                                        <div class="card-body">
-                                                            <blockquote class="blockquote mb-0 text-light">
-                                                                <p class="text-light">Question?</p>
-                                                                <footer class="blockquote-footer text-light">Question Description
-                                                                    <cite title="Source Title"></cite>
-                                                                </footer>
-                                                            </blockquote>
-                                                        </div>
-                                                        <div class="card-footer">
-                                                            <button class="au-btn au-btn--green">Answer</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                                
+                            @endforeach                        
     
         
                         <!-- </div> -->
                     </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="answerBox" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="scrollmodalLabel">{{ $question['question'] }}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            {{ $question['description'] }}
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-primary">Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
 @endsection

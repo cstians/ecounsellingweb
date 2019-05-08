@@ -23,7 +23,7 @@
                                             <i class="zmdi zmdi-account-o"></i>
                                         </div>
                                         <div class="text">
-                                            <h2>3562</h2>
+                                        <h2>3234</h2>
                                             <span>Members Online</span><br/>
                                         </div>
                                     </div>
@@ -78,4 +78,5 @@
                             </div>
                         </div>
                     </div>
+                    
 @endsection

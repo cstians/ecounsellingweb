@@ -326,17 +326,6 @@ section {
     height: 100vh;
 }
 
-.page-content-ecounselling-auth {
-    background: #e5e5e5;
-    height: auto;
-    /* min-height: 100vh; */
-}
-
-.page-content-ecounselling-auth-login {
-    background: #e5e5e5;
-    height: 100vh;
-}
-
 .login-wrap {
     max-width: 540px;
     padding-top: 8vh;

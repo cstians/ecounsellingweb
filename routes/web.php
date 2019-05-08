@@ -50,3 +50,5 @@ Route::get('search', function() {
 Route::get('settings', function() {
     echo 'Settings hit';
 })->name('settings');
+
+Route::post('addanswer', 'QuestionController@update');
