@@ -53,8 +53,8 @@
                                             <form action="{{ route('deletequery') }}" method="POST">
                                             @csrf
                                             <input type="hidden" name="_method" value="DELETE"/>
-                                            <input type="hidden" name="question_id" value="{{ $question['id'] }}"/>
-                                                <button class="au-btn au-btn--blue" data-toggle="modal" type="submit">Delete this Query</button>
+                                            <input type="hidden" name="question_id" value="{{ $question['id'] }}"/> <br>
+                                                <button class="btn btn-danger btn-sm" data-toggle="modal" type="submit">Delete this Query</button>
                                             </form>
                                         @else
                                         
