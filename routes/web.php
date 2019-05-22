@@ -33,6 +33,7 @@ Route::delete('deletefeedback', 'FeedbackController@destroy')->name('deletefeedb
 
 Route::get('stories', 'StoryController@index')->name('stories');
 Route::delete('deletestory', 'StoryController@destroy')->name('deletestory');
+Route::get('editstory', 'StoryController@edit')->name('editstory');
 
 
 Route::get('notifications', 'NotificationController@index')->name('notifications');

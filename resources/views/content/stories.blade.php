@@ -38,18 +38,18 @@
                                     </div>
                                     <div class="card-footer">
                                     
-                                        <button class="au-btn au-btn--green">Post</button>&nbsp&nbsp&nbsp&nbsp&nbsp
+                                        
                                         <form action="{{ route('deletestory') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="_method" value="DELETE"/>
                                         <input type="hidden" name="story_id" value="{{ $story['id'] }}"/>
-                                        <button class="au-btn au-btn--blue" type="submit">Remove</button>
+                                        <button class="au-btn au-btn--green" href="{{ url('editstory') }}">Post</button>
+                                        <button class="btn btn-danger btn-red" type="submit">Remove</button>
                                         
                                     </form>
                                     </div>
                                 </div>
                 </div>
                 @endforeach
-                    <!-- </div> -->
-                </div>
+    </div>
 @endsection
