@@ -69,7 +69,7 @@ class StoryController extends Controller
      */
     public function edit(Story $story)
     {
-        //
+        return view('content/editstory');
     }
 
     /**

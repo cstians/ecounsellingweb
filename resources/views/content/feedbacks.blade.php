@@ -41,7 +41,7 @@
                                             @csrf
                                             <input type="hidden" name="_method" value="DELETE"/>
                                             <input type="hidden" name="feedback_id" value="{{ $feedback['id'] }}"/>
-                                            <button type="submit" class="au-btn au-btn--green">Mark As Read</button>
+                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                           </form>
                                         </div>
                                     </div>

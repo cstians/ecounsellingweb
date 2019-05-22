@@ -95,6 +95,6 @@ class FeedbackController extends Controller
     {
         $deleteFeedback = Feedback::find($feedback->feedback_id);
         $deleteFeedback->delete();
-        return back()->with('message', 'Feedback is removed as Read');
+        return back()->with('message', 'Feedback is deleted after finish reading');
     }
 }
