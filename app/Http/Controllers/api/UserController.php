@@ -39,7 +39,8 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
-            'designation' => $request->designation
+            'designation' => $request->designation,
+            'display_name' => hash('sha256', $request->name.'dgks')
         ]);
 
         $user->save();
@@ -53,11 +54,11 @@ class UserController extends Controller
         $userType=$request->type;
 
         if($userType=='User'){
-            $data=DB::table('users')->select('name','designation')->where('designation','User')->get();
+            $data=DB::table('users')->select('display_name','designation')->where('designation','User')->get();
         }
 
         else if($userType=='Peer'){
-            $data=DB::table('users')->select('name','designation')->where('designation','Peer')->get();
+            $data=DB::table('users')->select('display_name','designation')->where('designation','Peer')->get();
 
         }
         return response()->json(
