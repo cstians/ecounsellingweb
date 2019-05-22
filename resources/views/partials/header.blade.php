@@ -16,17 +16,17 @@
                                     
                                     <div class="noti__item js-item-menu">
                                         <i class="zmdi zmdi-notifications" title="Notifications"></i>
-                                        <span class="quantity">3</span>
+                                        <span class="quantity">4</span>
                                         <div class="notifi-dropdown js-dropdown">
                                             <div class="notifi__title">
-                                                <p>You have 3 Notifications</p>
+                                                <p>You have 4 Notifications</p>
                                             </div>
                                             <div class="notifi__item">
                                                 <div class="bg-c1 img-cir img-40">
                                                     <i class="zmdi zmdi-email-open"></i>
                                                 </div>
                                                 <div class="content">
-                                                    <p>You got a 6 questions to answer</p>
+                                                    <p>You got 5 questions to answer</p>
                                                     <span class="date">March 21, 2019 06:50</span>
                                                 </div>
                                             </div>
@@ -48,8 +48,14 @@
                                                     <span class="date">March 16, 2019 21:14</span>
                                                 </div>
                                             </div>
-                                            <div class="notifi__footer">
-                                                <a href="#">All notifications</a>
+                                            <div class="notifi__item">
+                                                <div class="bg-c3 img-cir img-40">
+                                                    <i class="zmdi zmdi-file-text"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>You got 7 Peer Memberships to review</p>
+                                                    <span class="date">March 16, 2019 21:14</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
