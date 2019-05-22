@@ -24,3 +24,14 @@ Route::post('signup', 'api\UserController@signup');
 Route::post('addquestion', 'api\QuestionController@store');
 
 Route::get('getquestion', 'api\QuestionController@show');
+
+Route::get('getlink','api\MotivationController@getlink');
+
+Route::post('getuser','api\UserController@getUser');
+Route::post('getquestions','api\QuestionController@getQuery');
+
+Route::post('getanswer','api\QuestionController@getAnswer');
+
+Route::get('peerviewquery','api\QuestionController@peerViewQuery');
+
+Route::post('feedback','api\FeedbackController@store');

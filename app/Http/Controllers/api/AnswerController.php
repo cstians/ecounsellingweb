@@ -4,21 +4,31 @@ namespace App\Http\Controllers\api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Session; 
-
 use App\Question as question;
 use DB;
 
-class QuestionController extends Controller
+class AnswerController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
+
     {
-        //
+        $question=new Question();
+        //$count=$question->count();
+        $data=DB::table('questions')->select('question','description')->get();
+
+       
+
+    
+            //$answer=question::select('question','description')->get();
+            
+      return response()->json(
+            $data
+        ,201);
     }
 
     /**
@@ -39,18 +49,7 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //To store the user question
-
-        $question = new Question([
-            'question' => $request->question,
-            'description' => $request->description,
-            'askedby' => $request->authUser,
-        ]);
-
-        $question->save();
-	    return response()->json([
-			'message' => 'Question Submitted Successfully'
-	  	], 201);
+        //
     }
 
     /**
@@ -84,10 +83,7 @@ class QuestionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //Admin answer response, limited to one answer only
-        //Needs database normalization of more than one answer can be added
-
-
+        //
     }
 
     /**
@@ -101,34 +97,11 @@ class QuestionController extends Controller
         //
     }
 
-    public function getQuery(Request $request){
-        $authUser=$request->authUser;
-
-        $data=DB::table('questions')->select('question','description','answer','askedby')->where('askedby','!=',$authUser)->get();
+    public function getAnswer(){
+        $data=DB::table('questions')->select('answer')->get();
 
         return response()->json(
-            $data,
-        201);
-
-    }
-
-    public function getAnswer(Request $request){
-        //$authuser=$request->authUser;
-        $authuser=$request->authUser;
-
-        $data=DB::table('questions')->select('question','answer')->where('askedby','=',$authuser)->get();
-
-        return response()->json(
-         $data,
-        201);
-    }
-
-    public function peerViewQuery(){
-        $data=DB::table('questions')->select('question','answer')->get();
-
-        return response()->json(
-            $data,
-
-        201);
+            $data
+        ,201);
     }
 }
