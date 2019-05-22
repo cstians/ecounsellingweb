@@ -70,7 +70,7 @@
                                             <i class="zmdi zmdi-calendar-note"></i>
                                         </div>
                                         <div class="text">
-                                            <h2>{{ $total['queries_answer'] }}</h2>
+                                            <h2>{{ $total['queries_answer'] }} of {{ $total['total_queries'] }}</h2>
                                             <span>Queries Answered</span><br/>
                                         </div>
                                     </div>

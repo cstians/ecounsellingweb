@@ -31,6 +31,7 @@ class HomeController extends Controller
             'peer' => DB::table('users')->where('designation', 'peer')->count(),
             'professional' => DB::table('users')->where('designation', 'admin')->count(),
             'queries_answer' => DB::table('questions')->whereNotNull('answer')->count(),
+            'total_queries' => DB::table('questions')->count(),
         ];
         return view('content.overview')->with('total', $totals);
     }

@@ -35,18 +35,25 @@ class UserController extends Controller
             'password' => 'required|string|confirmed'
         ]);*/
 
-        $user = new User([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-            'designation' => $request->designation,
-            'display_name' => hash('sha256', $request->name.'dgks')
-        ]);
-
-        $user->save();
-	    return response()->json([
-			'message' => 'Successfully created user!'
-	  	], 201);
+        if (User::where('name', '=', $request->name)->count() > 0) {
+            // user found
+            return response()->json([
+                'message' => 'uae'
+              ], 201);  
+         } else {
+            $user = new User([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => bcrypt($request->password),
+                'designation' => $request->designation,
+                'display_name' => hash('sha256', $request->name.'dgks')
+            ]);
+    
+            $user->save();
+            return response()->json([
+                'message' => 'scu'
+              ], 201);
+         }
     }
 
     public function getUser(Request $request){
@@ -54,11 +61,11 @@ class UserController extends Controller
         $userType=$request->type;
 
         if($userType=='User'){
-            $data=DB::table('users')->select('display_name','designation')->where('designation','User')->get();
+            $data=DB::table('users')->select('display_name','designation', 'name')->where('designation','User')->get();
         }
 
         else if($userType=='Peer'){
-            $data=DB::table('users')->select('display_name','designation')->where('designation','Peer')->get();
+            $data=DB::table('users')->select('display_name','designation', 'name')->where('designation','Peer')->get();
 
         }
         return response()->json(
