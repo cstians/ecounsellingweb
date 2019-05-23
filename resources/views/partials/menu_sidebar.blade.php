@@ -30,20 +30,9 @@
                                 <a href="{{ route('motivation') }}">
                                     <i class="fas fa-map-marker-alt"></i>Motivate</a>
                             </li>
-                            <li class="has-sub">
-                                <a class="js-arrow" href="#">
+                            <li>
+                                <a href="{{ route('displayadmins') }}">
                                     <i class="fas fa-copy"></i>Administrative</a>
-                                <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                    <li>
-                                        <a href="{{ route('addadmin') }}">Add Admin</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('removeadmin') }}">Remove Admin</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('displayadmins') }}">Display all Admins</a>
-                                    </li>
-                                </ul>
                             </li>
                         </ul>
                     </nav>
