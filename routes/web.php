@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('revalidate');
+Route::post('changepassword', 'HomeController@changePassword')->name('changepassword');
 
 Route::get('answer', 'AnswerController@index')->name('answer')->middleware('revalidate');
 Route::post('submitanswer/{qid}', 'AnswerController@updateAnswer');
@@ -60,8 +61,6 @@ Route::get('search', function() {
     echo 'Search';
 })->name('search');
 
-Route::get('settings', function() {
-    echo 'Settings hit';
-})->name('settings');
+Route::get('settings', 'SettingController@index')->name('settings');
 
 Route::post('addanswer', 'QuestionController@update');

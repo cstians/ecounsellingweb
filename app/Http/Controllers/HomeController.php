@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Users;
-
+use Auth;
 
 class HomeController extends Controller
 {
@@ -33,6 +33,13 @@ class HomeController extends Controller
             'queries_answer' => DB::table('questions')->whereNotNull('answer')->count(),
             'total_queries' => DB::table('questions')->count(),
         ];
+
+       
         return view('content.overview')->with('total', $totals);
+    }
+
+    public function changePassword(Request $request) {
+        DB::table('users')->where('email', Auth::user()->email)->update(['password' => bcrypt($request->newpassword)]);
+        return redirect('login');
     }
 }

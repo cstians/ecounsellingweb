@@ -12,8 +12,6 @@
                             </form>
                             <div class="header-button">
                                 <div class="noti-wrap">
-                                    
-                                    
                                     <div class="noti__item js-item-menu">
                                         <i class="zmdi zmdi-notifications" title="Notifications"></i>
                                         <span class="quantity">4</span>
@@ -25,28 +23,34 @@
                                                 <div class="bg-c1 img-cir img-40">
                                                     <i class="zmdi zmdi-email-open"></i>
                                                 </div>
+                                                <a href="{{route('answer')}}">
                                                 <div class="content">
-                                                    <p>You got 5 questions to answer</p>
-                                                    <span class="date">March 21, 2019 06:50</span>
+                                                    <p>You got questions to answer</p>
+                                                    <span class="date">May 22, 2019 06:50</span>
                                                 </div>
+                                                </a>
                                             </div>
                                             <div class="notifi__item">
                                                 <div class="bg-c2 img-cir img-40">
                                                     <i class="zmdi zmdi-account-box"></i>
                                                 </div>
+                                                <a href="{{route('feedbacks')}}">
                                                 <div class="content">
-                                                    <p>You have 5 feedbacks to open</p>
-                                                    <span class="date">March 12, 2019 09:40</span>
+                                                    <p>You have feedbacks to open</p>
+                                                    <span class="date">May 22, 2019 09:40</span>
                                                 </div>
+                                                </a>
                                             </div>
                                             <div class="notifi__item">
                                                 <div class="bg-c3 img-cir img-40">
                                                     <i class="zmdi zmdi-file-text"></i>
                                                 </div>
+                                                <a href="{{route('stories')}}">
                                                 <div class="content">
-                                                    <p>You got 1 Success Story to review</p>
-                                                    <span class="date">March 16, 2019 21:14</span>
+                                                    <p>You got Success Stories to review</p>
+                                                    <span class="date">May 22, 2019 21:14</span>
                                                 </div>
+                                                </a>
                                             </div>
                                             <div class="notifi__item">
                                                 <div class="bg-c3 img-cir img-40">
@@ -54,7 +58,7 @@
                                                 </div>
                                                 <div class="content">
                                                     <p>You got 7 Peer Memberships to review</p>
-                                                    <span class="date">March 16, 2019 21:14</span>
+                                                    <span class="date">May 23, 2019 05:14</span>
                                                 </div>
                                             </div>
                                         </div>
