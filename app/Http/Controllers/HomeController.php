@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Users;
 use Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Validator;
 
 class HomeController extends Controller
 {
@@ -39,7 +41,40 @@ class HomeController extends Controller
     }
 
     public function changePassword(Request $request) {
-        DB::table('users')->where('email', Auth::user()->email)->update(['password' => bcrypt($request->newpassword)]);
-        return redirect('login');
+        /*
+        $valid_rules = array(
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed',
+            'confirm_password' => 'required',
+        );
+
+        $validator = Validator::make(Input::all(), $valid_rules);
+
+        if($validator->fails()) {
+            return back()->with('error_message', 'All fields are required');
+        }
+        */
+        if(Hash::check($request->old_password, Auth::user()->password)) {
+            if($request->new_password == $request->confirm_password) {
+                DB::table('users')->where('email', Auth::user()->email)->update(['password' => bcrypt($request->new_password)]);
+                Auth::logout();
+                return redirect('login');        
+            } else {
+                return back()->with('error_message', 'New Password and Confirm Password does not match');
+            }
+        } else {
+            return back()->with('error_message', 'Your old password is incorrect');
+        }
+    }
+
+    public function showAdminList() {
+        $admins = DB::table('users')->where('designation', 'Admin')->get();
+        return view('content.viewadmins', compact('admins'));
+    }
+
+    public function destroy(Request $request) {
+        $user = User::find($request->id);
+        $user->delete();
+        return back()->with('message', 'Professional Counsellor deleted');
     }
 }

@@ -34,6 +34,11 @@
                                 <a href="{{ route('displayadmins') }}">
                                     <i class="fas fa-copy"></i>Administrative</a>
                             </li>
+
+                            <li>
+                                <a href="{{ route('verifypeer') }}">
+                                    <i class="fas fa-copy"></i>Verify Peer</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>

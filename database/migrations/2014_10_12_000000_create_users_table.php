@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('designation')->nullable();
             $table->string('socket_id')->nullable();
             $table->string('image_path')->nullable();
+            $table->string('peer_verified')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

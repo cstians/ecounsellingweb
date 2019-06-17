@@ -45,17 +45,10 @@ Route::get('motivation', 'MotivationController@index')->name('motivation');
 
 Route::post('motivation', 'MotivationController@store')->name('motivation');
 
-Route::get('addadmin', function() {
-    return view('content.addadmin');
-})->name('addadmin');
+Route::get('displayadmins', 'HomeController@showAdminList')->name('displayadmins');
+Route::delete('remove_admin', 'HomeController@destroy')->name('remove_admin');
 
-Route::get('removeadmin', function() {
-    return view('content.removeadmin');
-})->name('removeadmin');
-
-Route::get('displayadmins', function() {
-    return view('content.viewadmins');
-})->name('displayadmins');
+Route::get('verifypeer', 'VerifyPeerController@index')->name('verifypeer');
 
 Route::get('search', function() {
     echo 'Search';

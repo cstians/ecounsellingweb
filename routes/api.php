@@ -36,4 +36,4 @@ Route::get('peerviewquery','api\QuestionController@peerViewQuery');
 
 Route::post('feedback','api\FeedbackController@store');
 
-Route::get('notifications','api\NotificationController@index');
+Route::post('notifications','api\NotificationController@index');

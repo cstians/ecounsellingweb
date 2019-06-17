@@ -46,7 +46,6 @@
                                                     <cite title="Source Title">{{ $question['askedby'] }}</cite>
                                                 </footer>
                                             </blockquote>
-                                           
                                         </div>
                                         <div class="card-footer">
                                         @if($question['answer'])

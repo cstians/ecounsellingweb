@@ -43,20 +43,14 @@
                                     <i class="fas fa-map-marker-alt"></i>Motivate</a>
                             </li>
 
-                            <li class="has-sub">
-                                <a class="js-arrow" href="#">
+                            <li>
+                                <a href="{{ route('displayadmins') }}">
                                     <i class="fas fa-copy"></i>Administrative</a>
-                                <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                    <li>
-                                        <a href="{{ route('addadmin') }}">Add Admin</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('removeadmin') }}">Remove Admin</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('displayadmins') }}">Display all Admins</a>
-                                    </li>
-                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('verifypeer') }}">
+                                    <i class="fas fa-copy"></i>Verify Peer</a>
                             </li>
                         </ul>
                     </div>

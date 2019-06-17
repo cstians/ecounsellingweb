@@ -1,38 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\api;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use DB;
+use App\User;
 
-class NotificationController extends Controller
+class VerifyPeerController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $user_id = DB::select("select id from users where name = '$request->name'");
-        $uid = $user_id[0]->id;
-        $sentNotifs = DB::select("select notif_id from usernotifs where user_id = $uid");
-        $sent=array();
-        foreach($sentNotifs as $result) {
-            array_push($sent, $result->notif_id);
-        }
-        
-        
-        $notSent = DB::table('notifications')->select('id')->whereNotIn('id', $sent)->get();
-        print_r($notSent);
-/*        $notifs=DB::table('notifications')->select('title','message')->whereNotIn('id', $sent)->get();
-        $updateSent = DB::table('usernotifs')->insert(
-            ['user_id' => $uid, 'notif_id' => DB::table('notifications')->select('id')->whereNotIn('id', $sent)->get()]
-        );
-        return response()->json(
-            $notifs, 201);
-        */}
+        return view('content.verifypeer');
+    }
 
     /**
      * Show the form for creating a new resource.

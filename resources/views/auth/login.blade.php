@@ -48,7 +48,7 @@
                             <form action="{{ route('login') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label>Username</label>
+                                    <label>Email</label>
                                     <input class="au-input au-input--full{{ $errors->has('email') ? ' is-invalid' : '' }}" type="email" name="email" placeholder="Username" value="{{ old('email') }}" required autofocus>
                                     
                                     @if ($errors->has('email'))
