@@ -11,6 +11,7 @@
                     <div class="col-md-12">
                         <div class="overview-wrap">
                             <h2 class="title-1">Motivate Audience</h2>
+                            <a href="{{ url('viewmotivs') }}">View &amp; Delete Outdated Links</a>
                         </div>
                     </div>
                 </div>
@@ -18,11 +19,11 @@
                 <!-- general form elements disabled -->
           <div class="box box-warning">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Send Multimedia</h3>
+                  <h3 class="box-title">Send a Multimedia Link</h3>
                 </div><br/>
                 <!-- /.box-header -->
                 <div class="box-body">
-                  <form action="{{ route('motivation') }}" method="post">
+                  <form action="{{ route('motivations') }}" method="post">
                   @csrf
                     <!-- text input -->
                     <div class="form-group">

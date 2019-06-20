@@ -41,12 +41,14 @@ Route::post('submitstory', 'StoryController@update')->name('submitstory')->middl
 
 
 Route::get('notifications', 'NotificationController@index')->name('notifications')->middleware('revalidate');
-
+Route::get('viewnotifs', 'NotificationController@indexposted')->name('viewnotifs')->middleware('revalidate');
+Route::delete('remove_notif', 'NotificationController@destroy')->name('remove_notif')->middleware('revalidate');
 Route::post('notification', 'NotificationController@store')->name('notification')->middleware('revalidate');
 
 Route::get('motivation', 'MotivationController@index')->name('motivation')->middleware('revalidate');
-
-Route::post('motivation', 'MotivationController@store')->name('motivation')->middleware('revalidate');
+Route::post('motivations', 'MotivationController@store')->name('motivations')->middleware('revalidate');
+Route::delete('remove_motiv', 'MotivationController@destroy')->name('remove_motiv')->middleware('revalidate');
+Route::get('viewmotivs', 'MotivationController@indexposted')->name('viewmotivs')->middleware('revalidate');
 
 Route::get('displayadmins', 'HomeController@showAdminList')->name('displayadmins')->middleware('revalidate');
 Route::delete('remove_admin', 'HomeController@destroy')->name('remove_admin')->middleware('revalidate');

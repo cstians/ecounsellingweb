@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Notification;
+use App\Notification as notification;
 use Illuminate\Http\Request;
 
 class NotificationController extends Controller
@@ -25,6 +25,11 @@ class NotificationController extends Controller
     public function index()
     {
         return view('content.announcements');
+    }
+
+    public function indexposted() {
+        $notifs = notification::all();
+        return view('content.posted_notifications', compact('notifs'));
     }
 
     /**
@@ -51,7 +56,7 @@ class NotificationController extends Controller
         ]);
 
         $notification->save();
-	    return back()->with('message', 'The notification has been successfully send');
+	    return back()->with('message', 'The notification has been successfully sent to all users');
     }
 
     /**
@@ -94,8 +99,12 @@ class NotificationController extends Controller
      * @param  \App\Notification  $notification
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Notification $notification)
+    public function destroy(Request $request)
     {
-        //
+        $notifid = notification::find($request->nid);
+        $notifid->delete();
+        if($notifid) {
+            return back()->with('message', 'Notification Successfully Removed');
+        }
     }
 }

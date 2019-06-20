@@ -11,6 +11,7 @@
                     <div class="col-md-12">
                         <div class="overview-wrap">
                             <h2 class="title-1">Broadcast Notification</h2>
+                        <a href="{{ url('viewnotifs') }}">View &amp; Delete Outdated Notifications</a>
                         </div>
                     </div>
                 </div>

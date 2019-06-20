@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Motivation;
+use App\Motivation as motivation;
 use Illuminate\Http\Request;
 
 class MotivationController extends Controller
@@ -27,6 +27,10 @@ class MotivationController extends Controller
         return view('content.motivate');
     }
 
+    public function indexposted() {
+        $motivs = motivation::all();
+        return view('content.motivate_posted', compact('motivs'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -94,8 +98,12 @@ class MotivationController extends Controller
      * @param  \App\Motivation  $motivation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Motivation $motivation)
+    public function destroy(Request $request)
     {
-        //
+        $motivid = motivation::find($request->nid);
+        $motivid->delete();
+        if($motivid) {
+            return back()->with('message', 'Motivation Link Successfully Removed');
+        }
     }
 }
