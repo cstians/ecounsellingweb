@@ -25,10 +25,14 @@ class StoryController extends Controller
      */
     public function index()
     {
-        $stories=story::all();
+        $stories=story::where('post', '0')->get();
         return view('content.stories', compact('stories'));
     }
 
+    public function indexposted() {
+        $stories=story::where('post', 1)->get();
+        return view('content.stories_posted', compact('stories'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -81,7 +85,21 @@ class StoryController extends Controller
      */
     public function update(Request $request, Story $story)
     {
-        //
+        /*$story_update = Story::where("id", $request->sid)
+                ->update( 
+                       array( 
+                             "story" => $request->story_edited,
+                             "post" => '1',
+                             )
+                       );
+        */
+        //echo 'UPDATE stories SET story = "'.$request->story_edited.'", post = 1 WHERE id = '.$request->sid;
+        DB::statement('UPDATE stories SET story = "'.$request->story_edited.'", post = 1 WHERE id = '.$request->sid);
+        return back()->with('message', 'Story Successfully Posted');
+                       //$story_update->fill($new_user_data)->save();
+
+                       /*$new_user_data=array('story'=>$request->story_edited,'post'=>'1');
+                       User::where('id', $request->)->update($new_user_data);*/
     }
 
     /**

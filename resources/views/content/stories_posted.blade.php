@@ -11,7 +11,7 @@
                     <div class="col-md-12">
                         <div class="overview-wrap">
                                 <h2 class="title-1">Review & Post User Stories</h2>
-                                <a href="{{ url('storiesposted') }}">View & Delete Posted Stories
+                                <a href="{{ url('stories') }}">View New Stories
                                 </a>                               
                         </div>
                     </div>
@@ -28,28 +28,23 @@
                     @endif
                 <div class="row m-t-25">
                         <div class="col-sm-6 col-lg-12">
-                            <p>Click on the story content to edit the story to correct grammar and spelling errors</p><br/>
+                            <p>Remove posted stories</p><br/>
                         </div>
                         <!-- <div class="col-sm-6 col-lg-3"> -->
                             @foreach($stories as $story)
                                 <div class="col-md-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form action="submitstory" method="POST">
-                                                @csrf 
                                             <blockquote class="blockquote mb-0">
-                                                <textarea name="story_edited" cols="80" rows="6">{{ $story['story'] }}</textarea>
-                                                <input type="hidden" name="sid" value="{{ $story['id'] }}"/>
+                                                <p>{{ $story['story'] }}</p>
                                             </blockquote>
                                         </div>
                                         <div class="card-footer">
-                                                <button class="au-btn au-btn--green" data-toggle="modal" type="submit">Post this Story</button>
-                                            </form>
                                             <form action="{{ route('deletestory') }}" method="POST">
                                                 @csrf
                                                 <input type="hidden" name="_method" value="DELETE"/>
                                                 <input type="hidden" name="story_id" value="{{ $story['id'] }}"/> <br>
-                                                <button class="btn btn-danger" type="submit">Discard this Story</button>
+                                                <button class="btn btn-danger" type="submit">Delete this Story</button>
                                             </form> 
                                         </div>
                                     </form>

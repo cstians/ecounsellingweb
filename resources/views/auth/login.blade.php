@@ -73,8 +73,10 @@
                                     <label>
                                         <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>Remember Me
                                     </label>
+                                    <label>
+                                        <a href="{{ route('password.request') }}">Forgotten Password?</a>
+                                    </label>
                                 </div>
-
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Log In</button>
                                 
                             </form>

@@ -49,10 +49,4 @@
 
                     
     
-@endsection$notification = new Notification([
-            'title' => $request->notititle,
-            'message' => $request->message,
-        ]);
-
-        $notification->save();
-	    return redirect('home');
+@endsection

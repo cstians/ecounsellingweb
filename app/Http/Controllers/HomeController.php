@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Users;
+use App\User as User;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Validator;
@@ -73,8 +73,12 @@ class HomeController extends Controller
     }
 
     public function destroy(Request $request) {
-        $user = User::find($request->id);
-        $user->delete();
-        return back()->with('message', 'Professional Counsellor deleted');
+        Auth::logout();
+        $user = User::find($request->userid);
+        if($user->delete()) {
+            return redirect('login');
+        } else {
+            return back()->with('error_message', 'Server Error. Please try again later.');
+        }
     }
 }

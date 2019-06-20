@@ -11,6 +11,16 @@
                     <div class="col-md-12">
                         <div class="overview-wrap">
                             <h2 class="title-1">List of Professional Counsellors</h2>
+                            <br/>
+                            @if(Session::has('message'))
+                            <div class="sufee-alert alert with-close alert-success alert-dismissable fade show">
+                            <span class="badge badge-pill badge-success">Success</span>
+                                {{ Session::get('message') }}&nbsp;
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"> &times;</span>
+                                </button>
+                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -35,20 +45,22 @@
                                             <td>
                                                 <span class="block-email">{{ $admin->email }}</span>
                                             </td>
-                                            <td class="desc">{{ $admin->designation }}</td>
+                                            <td class="desc">Professional Counsellor</td>
                                             <td>
                                                 <div class="table-data-feature">
                                                     <button class="item" data-toggle="tooltip" data-placement="top" title="Edit" type="submit">
                                                         <i class="zmdi zmdi-edit"></i>
                                                     </button>
-                                                    <form action="remove_admin" method="POST">
-                                                        <input type="hidden" name="_method" value="DELETE"/>
-                                                    <input type="hidden" name="admin_id" value="{{ $admin->id }}"/>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete" type="submit">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                    </form>
-                                                    
+                                                    @unless(Auth::user()->id == $admin->id)    
+                                                        <form action="remove_admin" method="POST">
+                                                            @csrf
+                                                            <input type="hidden" name="_method" value="DELETE"/>
+                                                        <input type="hidden" name="admin_id" value="{{ $admin->id }}"/>
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete" type="submit">
+                                                                <i class="zmdi zmdi-delete"></i>
+                                                            </button>
+                                                        </form>
+                                                    @endunless
                                                 </div>
                                             </td>
                                         </tr>

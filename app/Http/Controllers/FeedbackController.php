@@ -97,4 +97,11 @@ class FeedbackController extends Controller
         $deleteFeedback->delete();
         return back()->with('message', 'Feedback is deleted after finish reading');
     }
+
+    public function clearall() {
+        $delt = feedback::truncate();
+        if($delt) {
+            return back()->with('message', 'All feedbacks have been removed successfully.');
+        }
+    }
 }

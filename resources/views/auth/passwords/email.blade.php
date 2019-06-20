@@ -6,8 +6,8 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Reset Password') }}</div>
-
                 <div class="card-body">
+                    <p>Password Reset link will be mailed to the email you enter below. Please enter the email you used to register with the eCounselling System.</p>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}

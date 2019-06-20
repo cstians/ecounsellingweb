@@ -11,9 +11,20 @@
                     <div class="col-md-12">
                         <div class="overview-wrap">
                             <h2 class="title-1">Feedbacks</h2>
+                        <form action="{{ route('clearfeedbacks') }}" method="post">
+                            @csrf
+                            @if(count($feedback) == 0)
+                                <button type="submit" class="btn btn-danger" disabled>Delete all Feedbacks
+                                </button>
+                            @else 
+                                <button type="submit" class="btn btn-danger">Delete all Feedbacks
+                                </button>
+                            @endif
+                        </form>
                         </div>
                     </div>
                 </div>
+                <br/>
                 @if(Session::has('message'))
                     <div class="sufee-alert alert with-close alert-success alert-dismissable fade show">
                     <span class="badge badge-pill badge-success">Success</span>
@@ -22,7 +33,7 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                     </div>
-                    @endif
+                @endif
                 <div class="row m-t-25">
                         <!-- <div class="col-sm-6 col-lg-3"> -->
                         @foreach($feedback as $feedback)

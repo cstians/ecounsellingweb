@@ -1,22 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api;
 
 use Illuminate\Http\Request;
-use App\User;
+use App\Http\Controllers\Controller;
+use App\Story;
 
-class VerifyPeerController extends Controller
+class StoryController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +15,7 @@ class VerifyPeerController extends Controller
      */
     public function index()
     {
-        return view('content.verifypeer');
+        //
     }
 
     /**
@@ -45,7 +36,14 @@ class VerifyPeerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $story = new Story([
+            'story' => $request->stories,
+        ]);
+        $story->save();
+
+        return response()->json([
+            'message' => 'sucessful', //Spelling of Successful.
+        ],201);
     }
 
     /**
@@ -79,7 +77,7 @@ class VerifyPeerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**

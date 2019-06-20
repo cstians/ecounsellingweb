@@ -38,4 +38,21 @@
                 </form>
                 </div>
                 <br/>
+                <div class="form-group">
+                <form action="deactivate" method="POST">
+                    @csrf
+                    <input type="hidden" value="{{ Auth::user()->id }}" name="userid"/>
+                    <input type="hidden" name="_method" value="DELETE"/>
+                    <button class="btn btn-danger" type="submit">Deactivate Account</button>
+                    @if(Session::has('error_message'))
+                        <div class="sufee-alert alert with-close alert-success alert-dismissable fade show">
+                            <span class="badge badge-pill badge-success">Failed</span>
+                                {{ Session::get('error_message') }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                    @endif
+                </form>
+                </div>
 @endsection
