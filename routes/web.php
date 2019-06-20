@@ -56,9 +56,13 @@ Route::delete('remove_admin', 'HomeController@destroy')->name('remove_admin')->m
 Route::get('verifypeer', 'VerifyPeerController@index')->name('verifypeer')->middleware('revalidate');
 
 Route::get('search', function() {
-    echo 'Search';
+    echo 'Future Work!';
 })->name('search');
 
 Route::get('settings', 'SettingController@index')->name('settings')->middleware('revalidate');
 
-Route::post('addanswer', 'QuestionController@update')->middleware('revalidate');
+Route::post('addanswer', 'QuestionController@update')->name('addanswer')->middleware('revalidate');
+
+Route::get('displaypeers', 'HomeController@listPeers')->name('displaypeers')->middleware('revalidate');
+Route::post('approve_peer', 'VerifyPeerController@update')->name('approve_peer')->middleware('revalidate');
+Route::delete('delete_approval', 'VerifyPeerController@destroy')->name('delete_approval')->middleware('revalidate');

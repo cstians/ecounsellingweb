@@ -1,6 +1,6 @@
 @extends('master_layout')
 
-@section('page_title','Admin | Verify Peer Counsellors')
+@section('page_title','Admin | Peer Counsellors')
 
 @section('main_content')
    <!-- MAIN CONTENT-->
@@ -11,7 +11,7 @@
                     <div class="col-md-12">
                         <div class="overview-wrap">
                             <h2 class="title-1">List of Peer Counsellor Request</h2>
-                        <a href="{{ url('displaypeers') }}">List all Peer Counsellors</a>
+                        <a href="{{ url('verifypeer') }}">Respond to Peer Counsellor Requests</a>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                     @endif
                 <div class="row m-t-25">
                     <div class="col-sm-6 col-lg-12">
-                        <p>Please verify the following registration request by the peer counsellors. If the details provided by the peer counsellors do not match your records, kindly discard the request by clicking on the discard button</p>
+                        <p>List of Peer Counsellors registered with eCounselling</p>
                     </div>
 
                     <div class="table-responsive table-responsive-data2">
@@ -44,7 +44,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($unv_peer as $peer)
+                                        @foreach($ypeer as $peer)
                                         <tr class="tr-shadow">
                                             <td>{{ $peer->id }}</td>
                                             <td colspan="2">{{ $peer->name }}</td>
@@ -56,13 +56,6 @@
                                             <td>Male</td>
                                             <td>
                                                 <div class="table-data-feature">
-                                                <form action="{{ route('approve_peer') }}" method="post">
-                                                @csrf
-                                                <input type="hidden" name="pid" value="{{ $peer->id }}"/>
-                                                    <button type="submit" class="item" data-toggle="tooltip" data-placement="top" title="Verify">
-                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                    </button>
-                                                </form>
                                                 <form action="{{ route('delete_approval') }}" method="post">
                                                 @csrf
                                                     <input type="hidden" name="_method" value="DELETE"/>

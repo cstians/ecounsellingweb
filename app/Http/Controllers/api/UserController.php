@@ -41,14 +41,27 @@ class UserController extends Controller
                 'message' => 'uae'
               ], 201);  
          } else {
-            $user = new User([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => bcrypt($request->password),
-                'designation' => $request->designation,
-                'display_name' => hash('sha256', $request->name.'dgks')
-            ]);
-    
+            if($request->identityCardNumber) {
+                $user = new User([
+                    'name' => $request->name,
+                    'email' => $request->email_id,
+                    'password' => bcrypt($request->password),
+                    'designation' => $request->designation,
+                    'display_name' => hash('sha256', $request->name.'dgks'),
+                    'peer_id' => $request->peerIdentity,
+                    'id_card' => $request->identityCardNumber
+                ]);
+            } else {
+                $user = new User([
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => bcrypt($request->password),
+                    'designation' => $request->designation,
+                    'display_name' => hash('sha256', $request->name.'dgks')
+                ]);
+        
+            }
+            
             $user->save();
             return response()->json([
                 'message' => 'scu'

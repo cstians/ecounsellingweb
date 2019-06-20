@@ -81,4 +81,9 @@ class HomeController extends Controller
             return back()->with('error_message', 'Server Error. Please try again later.');
         }
     }
+
+    public function listPeers() {
+        $ypeer = user::where('designation', 'Peer')->where('peer_verified', '1')->get();
+        return view('content.peercslr', compact('ypeer'));
+    }
 }

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+use App\User as user;
+use Illuminate\Support\Facades\DB;
 
 class VerifyPeerController extends Controller
 {
@@ -24,8 +25,11 @@ class VerifyPeerController extends Controller
      */
     public function index()
     {
-        return view('content.verifypeer');
+        $unv_peer = user::where('designation', 'Peer')->where('peer_verified', '0')->get();
+        return view('content.verifypeer', compact('unv_peer'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -77,9 +81,10 @@ class VerifyPeerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        DB::statement('UPDATE users SET peer_verified = 1 WHERE id = '.$request->pid);
+        return back()->with('message', 'Peer Counsellor Successfully Registered to the eCOunselling System');
     }
 
     /**
@@ -88,8 +93,10 @@ class VerifyPeerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $deletePeer = user::find($request->pid);
+        $deletePeer->delete();
+        return back()->with('message', 'The Peer Counsellor is removed.');
     }
 }
